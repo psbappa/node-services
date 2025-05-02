@@ -8,7 +8,7 @@ module.exports = async function (req, res, next) {
   try {
     // console.log('Token:', token);
     const response = await axios.post(`${process.env.AUTH_SERVICE_URL}`, { token });
-    console.log('User from auth:', response.data);
+    // console.log('User from auth:', response.data);
     req.user = response.data; // { id, role }
     next();
   } catch (err) {
