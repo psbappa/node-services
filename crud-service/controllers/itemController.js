@@ -11,12 +11,11 @@ exports.createItem = async (req, res) => {
 };
 
 exports.getItems = async (req, res) => {
-  console.log(res);
-  // const items = await Item.find({ createdBy: req.user.id });
-  // alert(req.user)
-  // const items = await Item.find({ userId: req.user.id });
+  // console.log('res:', req.user.id );
   try {
     const items = await Item.find();
+    // const items = await Item.find({ createdBy: req.user.id })
+    // const items = await Item.findfind({ userId: req.user.id })
     res.json(items);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch items' });
