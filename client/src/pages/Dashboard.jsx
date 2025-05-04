@@ -66,7 +66,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="p-4 max-w-2xl mx-auto">
+    <div className="p-4 max-w-2xl mx-auto" style={{ marginTop: '70px' }}>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">Dashboard</h2>
         <button onClick={handleLogout} className="text-red-500 underline">

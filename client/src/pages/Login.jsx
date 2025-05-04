@@ -26,7 +26,7 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center h-screen" style={{marginTop: '94px'}}>
       <form className="bg-white p-6 rounded shadow w-80" onSubmit={handleSubmit}>
         <h2 className="text-xl font-bold mb-4">Login</h2>
         <input
