@@ -14,12 +14,15 @@ export default function Dashboard() {
   const fetchItems = async () => {
     // const res = await axios.get("/items");    import.meta.env.VITE_BACKEND_URL + "/api",
     // console.log("Token:", localStorage.getItem("token"));
-    const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/items`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    });
-    console.log(res);
+    const res = await axios.get(
+      `${import.meta.env.VITE_BACKEND_URL}/api/items`,
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+    // console.log(res);
     setItems(res.data);
   };
 
@@ -32,8 +35,25 @@ export default function Dashboard() {
   };
 
   const deleteItem = async (id) => {
-    await axios.delete(`/items/${id}`);
-    fetchItems();
+    try {
+      const token = localStorage.getItem("token"); // localStorage se
+      const res = await fetch(`http://localhost:8000/api/items/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log('res:', res);
+      if (res.ok) {
+        setItems(items.filter((item) => item._id !== id));
+      } else {
+        const data = await res.json();
+        console.error("Delete failed:", data.message);
+      }
+    } catch (err) {
+      console.error("Error:", err);
+    }
+    // fetchItems();
   };
 
   const handleLogout = () => {
@@ -67,17 +87,24 @@ export default function Dashboard() {
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Description"
         />
-        <button className="bg-blue-600 text-white px-4 py-2 rounded" type="submit">
+        <button
+          className="bg-blue-600 text-white px-4 py-2 rounded"
+          type="submit"
+        >
           Add
         </button>
       </form>
 
       <ul>
         {items.map((item) => (
-          <li key={item._id} className="border p-3 mb-2 flex justify-between items-center">
+          <li
+            key={item._id}
+            className="border p-3 mb-2 flex justify-between items-center"
+          >
             <div>
               <strong>{item.name}</strong>: {item.description}
             </div>
+            {/* {console.log('user:', user?.role)} */}
             {user?.role === "admin" && (
               <button
                 onClick={() => deleteItem(item._id)}

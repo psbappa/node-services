@@ -11,7 +11,6 @@ exports.createItem = async (req, res) => {
 };
 
 exports.getItems = async (req, res) => {
-  // console.log('res:', req.user.id );
   try {
     const items = await Item.find();
     // const items = await Item.find({ createdBy: req.user.id })
