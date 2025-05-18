@@ -6,7 +6,6 @@ exports.createItem = async (req, res) => {
   const { name, description } = req.body;
   try {
     const item = await Item.create({ name, description, createdBy: req.user.id });
-    res.status(201).json(item);
 
     // Added notification service
     await redis.publish('item-events', JSON.stringify({
@@ -14,6 +13,8 @@ exports.createItem = async (req, res) => {
       name: newItem.name,
       userId: req.user.id
     }));
+
+    res.status(201).json(item);
   } catch (err) {
     res.status(500).json({ message: 'Create failed' });
   }
@@ -42,8 +43,6 @@ exports.updateItem = async (req, res) => {
 
 exports.deleteItem = async (req, res) => {
   const { id } = req.params;
-  await Item.findOneAndDelete({ _id: id, createdBy: req.user.id });
-  res.json({ message: 'Deleted' });
 
   // Added notification services
   await redis.publish('item-events', JSON.stringify({
@@ -51,4 +50,7 @@ exports.deleteItem = async (req, res) => {
     itemId: req.params.id,
     userId: req.user.id
   }));
+
+  await Item.findOneAndDelete({ _id: id, createdBy: req.user.id });
+  res.json({ message: 'Deleted' });
 };

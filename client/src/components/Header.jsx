@@ -35,9 +35,10 @@ const Header = () => {
           </span>
 
           <nav className="flex gap-6 text-sm font-medium">
-            {isLanding ? (
+            {/* {isLanding ? ( */}
+            {true ? (
               <>
-                <ScrollLink
+                {/* <ScrollLink
                   to="home"
                   smooth
                   duration={500}
@@ -68,7 +69,8 @@ const Header = () => {
                   className="cursor-pointer hover:text-gray-300"
                 >
                   Contact
-                </ScrollLink>
+                </ScrollLink> */}
+                <Link to="/junky-bunky">Contacts</Link>
               </>
             ) : (
               <>
