@@ -1,0 +1,8 @@
+/* styles.css */
+.divider-line::after {
+    content: ""; /* Required property for ::after */
+    display: block; /* Or inline-block, depending on your layout needs */
+    width: 10px;
+    height: 10px;
+    background-color: red;
+  }

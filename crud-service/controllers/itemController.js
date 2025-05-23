@@ -1,9 +1,19 @@
 const Item = require('../models/Item');
+const Redis = require('ioredis');
+const redis = new Redis(process.env.REDIS_URL);
 
 exports.createItem = async (req, res) => {
   const { name, description } = req.body;
   try {
     const item = await Item.create({ name, description, createdBy: req.user.id });
+
+    // Added notification service
+    await redis.publish('item-events', JSON.stringify({
+      type: 'item_created',
+      name: newItem.name,
+      userId: req.user.id
+    }));
+
     res.status(201).json(item);
   } catch (err) {
     res.status(500).json({ message: 'Create failed' });
@@ -11,7 +21,6 @@ exports.createItem = async (req, res) => {
 };
 
 exports.getItems = async (req, res) => {
-  // console.log('res:', req.user.id );
   try {
     const items = await Item.find();
     // const items = await Item.find({ createdBy: req.user.id })
@@ -34,6 +43,14 @@ exports.updateItem = async (req, res) => {
 
 exports.deleteItem = async (req, res) => {
   const { id } = req.params;
+
+  // Added notification services
+  await redis.publish('item-events', JSON.stringify({
+    type: 'item_deleted',
+    itemId: req.params.id,
+    userId: req.user.id
+  }));
+
   await Item.findOneAndDelete({ _id: id, createdBy: req.user.id });
   res.json({ message: 'Deleted' });
 };
