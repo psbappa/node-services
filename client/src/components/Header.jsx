@@ -83,6 +83,7 @@ const Header = () => {
               <>
                 <span>Welcome :</span>
                 <Link to="/junky-bunky">Contacts</Link>
+                <Link to="/redux">Redux</Link>
                 <button onClick={handleLogout} className="text-red-500 underline">
                     Logout
                 </button>

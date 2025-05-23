@@ -7,6 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import Home from "./pages/Home";
 import Header from "./components/Header";
 import JunkyBunky from "./pages/JunkyBunky/JunkyBunky";
+import ReduxComponent from "./pages/redux/ReduxComponent";
 
 
 
@@ -34,6 +35,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="redux" element={<ReduxComponent />} />
               <Route
                 path="/dashboard"
                 element={
