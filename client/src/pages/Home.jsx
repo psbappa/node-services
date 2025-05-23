@@ -7,6 +7,7 @@ const Home = () => {
   return (
     <>
       <div className="h-screen w-full bg-gradient-to-br from-indigo-500 to-purple-600 flex flex-col items-center justify-center text-white text-center p-4">
+      {/* <div className=""> */}
         <motion.h1
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

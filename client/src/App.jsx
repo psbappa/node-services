@@ -6,7 +6,8 @@ import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./PrivateRoute";
 import Home from "./pages/Home";
 import Header from "./components/Header";
-import JunkyBunky from "./pages/JunkyBunky";
+import JunkyBunky from "./pages/JunkyBunky/JunkyBunky";
+
 
 
 

@@ -70,7 +70,6 @@ const Header = () => {
                 >
                   Contact
                 </ScrollLink> */}
-                <Link to="/junky-bunky">Contacts</Link>
               </>
             ) : (
               <>
@@ -83,6 +82,7 @@ const Header = () => {
             {user ? (
               <>
                 <span>Welcome :</span>
+                <Link to="/junky-bunky">Contacts</Link>
                 <button onClick={handleLogout} className="text-red-500 underline">
                     Logout
                 </button>

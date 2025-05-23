@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "../api";
 import { setToken } from "../auth";
 
@@ -26,7 +26,7 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen" style={{marginTop: '94px'}}>
+    <div className="flex items-center justify-center" style={{marginTop: '94px'}}>
       <form className="bg-white p-6 rounded shadow w-80" onSubmit={handleSubmit}>
         <h2 className="text-xl font-bold mb-4">Login</h2>
         <input
@@ -47,6 +47,11 @@ export default function Login() {
           Login
         </button>
         {error && <p className="text-red-500 mt-2">{error}</p>}
+        
+        <div class="mt-2 ...">
+          <span>New User!... please register </span>
+          <Link to="/register" className="w-full bg-blue-600 text-white p-2 rounded mt-6">Register</Link>
+        </div>
       </form>
     </div>
   );
