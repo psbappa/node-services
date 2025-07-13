@@ -4,6 +4,7 @@ const redis = new Redis(process.env.REDIS_URL);
 
 exports.createItem = async (req, res) => {
   const { name, description } = req.body;
+  console.log(name, description);
   try {
     const item = await Item.create({ name, description, createdBy: req.user.id });
 

@@ -55,9 +55,9 @@ export default function Dashboard() {
     <div className="p-4 max-w-2xl mx-auto">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">Dashboard</h2>
-        <button onClick={handleLogout} className="text-red-500 underline">
+        {/* <button onClick={handleLogout} className="text-red-500 underline">
           Logout
-        </button>
+        </button> */}
       </div>
       <div className="p-4">
         <h1 className="text-2xl font-bold">Dashboard</h1>
