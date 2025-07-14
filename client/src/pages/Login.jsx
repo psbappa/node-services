@@ -48,7 +48,7 @@ export default function Login() {
         </button>
         {error && <p className="text-red-500 mt-2">{error}</p>}
         
-        <div class="mt-2 ...">
+        <div className="mt-2 ...">
           <span>New User!... please register </span>
           <Link to="/register" className="w-full bg-blue-600 text-white p-2 rounded mt-6">Register</Link>
         </div>

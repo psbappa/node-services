@@ -19,7 +19,7 @@ const StickyHeaderLanding = () => {
           <span className="text-2xl font-bold">MyApp</span>
           <nav className="flex gap-6 text-sm font-medium">
             <Link to="home" smooth={true} duration={500} className="cursor-pointer hover:text-gray-300">
-              Home 1
+              Home
             </Link>
             <Link to="about" smooth={true} duration={500} className="cursor-pointer hover:text-gray-300">
               About

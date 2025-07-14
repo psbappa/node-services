@@ -7,7 +7,7 @@ import { getUser, logout } from "../auth"; // <-- import auth helpers
 
 const Header = () => {
   const user = getUser();
-
+  
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -36,9 +36,9 @@ const Header = () => {
 
           <nav className="flex gap-6 text-sm font-medium">
             {/* {isLanding ? ( */}
-            {true ? (
+            {/* {true ? (
               <>
-                {/* <ScrollLink
+                <ScrollLink
                   to="home"
                   smooth
                   duration={500}
@@ -69,7 +69,7 @@ const Header = () => {
                   className="cursor-pointer hover:text-gray-300"
                 >
                   Contact
-                </ScrollLink> */}
+                </ScrollLink>
               </>
             ) : (
               <>
@@ -77,13 +77,14 @@ const Header = () => {
                   Home
                 </Link>
               </>
-            )} 
+            )}  */}
 
+            <span>Welcome :</span>
+            <Link to="/junky-bunky">Contacts</Link>
+            <Link to="/redux">Redux</Link>
+            <Link to="/news-feed">News Blog</Link>
             {user ? (
               <>
-                <span>Welcome :</span>
-                <Link to="/junky-bunky">Contacts</Link>
-                <Link to="/redux">Redux</Link>
                 <button onClick={handleLogout} className="text-red-500 underline">
                     Logout
                 </button>

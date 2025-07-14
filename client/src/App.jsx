@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import JunkyBunky from "./pages/JunkyBunky/JunkyBunky";
 import ReduxComponent from "./pages/redux/ReduxComponent";
-
+import NewsFeed from "./pages/NewsFeed/index"; // Importing the NewsFeed component
 
 
 
@@ -26,7 +26,7 @@ function App() {
           style={{
             background: theme === "light" ? "#fff" : "#222",
             color: theme === "light" ? "#000" : "#fff",
-            padding: 20,
+            // padding: 20,
           }}
         >
           <Router>
@@ -36,6 +36,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="redux" element={<ReduxComponent />} />
+              <Route path="/news-feed" element={<NewsFeed />} />
               <Route
                 path="/dashboard"
                 element={
@@ -44,14 +45,6 @@ function App() {
                   </PrivateRoute>
                 }
               />
-              {/* <Route
-                path="/dashboard"
-                element={
-                  <PrivateRoute>
-                    <Dashboard />
-                  </PrivateRoute>
-                }
-              /> */}
               <Route
                 path="/junky-bunky"
                 element={

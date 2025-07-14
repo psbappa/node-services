@@ -1,0 +1,32 @@
+var articles = [
+    {
+      onClickLink: 'https://shreyascyber.com/test/1.html',
+      imageSource: 'https://cdn.jsdelivr.net/gh/linuxguist/news@main/1.png',
+      title: 'Tobacco is a huge health threat. So why aren’t we doing more about it?'
+    },
+    {
+      onClickLink: 'https://shreyascyber.com/test/2.html',
+      imageSource: 'https://cdn.jsdelivr.net/gh/linuxguist/news@main/2.png',
+      title: 'Early detection and diagnosis a critical link for effective NCD management'
+    },
+    {
+      onClickLink: 'https://shreyascyber.com/test/3.html',
+      imageSource: 'https://cdn.jsdelivr.net/gh/linuxguist/news@main/3.png',
+      title: 'UN meeting on NCDs falls short on hard commitments, civil society say'
+    },
+    {
+      onClickLink: 'https://shreyascyber.com/test/4.html',
+      imageSource: 'https://cdn.jsdelivr.net/gh/linuxguist/news@main/4.png',
+      title: 'How Colombia battled big tobacco and won'
+    },
+    {
+      onClickLink: 'https://shreyascyber.com/test/5.html',
+      imageSource: 'https://cdn.jsdelivr.net/gh/linuxguist/news@main/5.png',
+      title: 'Investing in NCD prevention to finance sustainable development'
+    },
+    {
+      onClickLink: 'https://shreyascyber.com/test/6.html',
+      imageSource: 'https://cdn.jsdelivr.net/gh/linuxguist/news@main/6.png',
+      title: 'Communicating noncommunicable diseases'
+    }
+  ]

@@ -22,13 +22,18 @@ export default function Dashboard() {
         },
       }
     );
-    // console.log(res);
+    // console.log(12345, res);
     setItems(res.data);
   };
 
   const createItem = async (e) => {
     e.preventDefault();
-    await axios.post("/items", { name, description });
+    if(!name || !description) {
+      alert('Please provide form inputs to submit')
+    } else {
+      await axios.post("/items", { name, description });
+    }
+    
     setName("");
     setDescription("");
     fetchItems();
