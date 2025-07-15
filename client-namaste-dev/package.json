@@ -1,0 +1,25 @@
+{
+  "name": "client-namaste-dev",
+  "version": "1.0.0",
+  "description": "This is Namaste react by Akshay Saini and co represent by Bappa Dey",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/psbappa/node-services)"
+  },
+  "keywords": [
+    "React",
+    "namaste",
+    "react",
+    "react",
+    "js"
+  ],
+  "author": "Bappa Dey",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  }
+}

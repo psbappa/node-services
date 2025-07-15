@@ -10,6 +10,7 @@ import JunkyBunky from "./pages/JunkyBunky/JunkyBunky";
 import ReduxComponent from "./pages/redux/ReduxComponent";
 import NewsFeed from "./pages/NewsFeed/index"; // Importing the NewsFeed component
 import Layout from "./components/Layout";
+import 'aos/dist/aos.css';
 
 function App() {
   const [theme, setTheme] = useState("light");

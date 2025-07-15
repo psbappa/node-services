@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from './MyComponent.module.css'; // Assuming you have some styles for the NewsFeed component
+import BlogHomePage from "./BlogHomePage";
 
 export default function index() {
   const [search, setSearch] = useState("india");
@@ -36,6 +37,8 @@ export default function index() {
                 <button onClick={getData}>Search</button>
             </div>
         </nav>
+
+        <BlogHomePage />
       </div>
     </>
   );
