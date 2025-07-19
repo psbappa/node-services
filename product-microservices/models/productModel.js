@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const { v4: uuidv4 } = require('uuid');
+const slugify = require('slugify');
 
 // Nested review schema
 const reviewSchema = new mongoose.Schema({
@@ -12,6 +14,17 @@ const reviewSchema = new mongoose.Schema({
 
 // Main product schema
 const productSchema = new mongoose.Schema({
+  productId: {
+    type: String,
+    default: function () {
+      return 'PROD-' + uuidv4().split('-')[0].toUpperCase();
+    },
+    unique: true,
+  },
+  slug: {
+    type: String,
+    unique: true
+  },
   name: {
     type: String,
     required: [true, 'Please enter product name'],
@@ -67,6 +80,15 @@ const productSchema = new mongoose.Schema({
   }
 }, {
   timestamps: true
+});
+
+productSchema.pre('save', function(next) {
+  // Only generate slug if name is modified or slug is empty
+  // if (this.isModified('name') || !this.slug) {
+  if (!this.slug && this.name) {
+    this.slug = slugify(this.name, { lower: true, strict: true });
+  }
+  next();
 });
 
 module.exports = mongoose.model('Product', productSchema);

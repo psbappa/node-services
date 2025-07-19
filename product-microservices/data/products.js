@@ -40,5 +40,19 @@ module.exports = [
     ],
     featured: false,
     tags: ["laptop", "intel", "hp", "student"],
+  },
+  {
+    name: "JBL Live Pro+ TWS",
+    description: "Premium true wireless earbuds with noise cancellation",
+    price: 19999,
+    brand: "JBL",
+    category: "Audio",
+    stock: 50,
+    images: [
+      "https://cdn.jbl.com/live-pro-plus-1.jpg",
+      "https://cdn.jbl.com/live-pro-plus-2.jpg"
+    ],
+    featured: true,
+    tags: ["jbl", "earbuds", "audio", "wireless"],
   }
 ];
