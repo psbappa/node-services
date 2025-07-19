@@ -7,7 +7,7 @@ import { getUser, logout } from "../auth"; // <-- import auth helpers
 
 const Header = () => {
   const user = getUser();
-  
+  console.log(user);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -83,6 +83,7 @@ const Header = () => {
             <Link to="/junky-bunky">Contacts</Link>
             <Link to="/redux">Redux</Link>
             <Link to="/news-feed">News Blog</Link>
+            <Link to="/eCommerce">Ecommerce</Link>
             {user ? (
               <>
                 <button onClick={handleLogout} className="text-red-500 underline">

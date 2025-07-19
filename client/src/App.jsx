@@ -11,6 +11,7 @@ import ReduxComponent from "./pages/redux/ReduxComponent";
 import NewsFeed from "./pages/NewsFeed/index"; // Importing the NewsFeed component
 import Layout from "./components/Layout";
 import 'aos/dist/aos.css';
+import Ecommerce from './components/Ecommerce/index'
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -36,6 +37,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="redux" element={<ReduxComponent />} />
               <Route path="/news-feed" element={<NewsFeed />} />
+              <Route path="/eCommerce" element={<Ecommerce />} />
               <Route
                 path="/dashboard"
                 element={
