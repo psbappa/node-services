@@ -22,7 +22,7 @@ export default function Dashboard() {
         },
       }
     );
-    // console.log(12345, res);
+    // console.log(12345, res.data);
     setItems(res.data);
   };
 
