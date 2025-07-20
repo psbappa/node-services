@@ -2,18 +2,22 @@ import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "../api";
-import { setToken } from "../auth";
+import { getUser, setToken } from "../auth";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const user = getUser();
+  console.log('Login component: ', user);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       // const res = await axios.post("/auth/login", { email, password });
+      
       const res = await axios.post("http://localhost:5000/api/auth/login", {
         email,
         password,

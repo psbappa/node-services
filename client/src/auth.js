@@ -12,8 +12,8 @@ export const logout = () => {
 
 export const getUser = () => {
   const token = getToken();
+  // console.log(userId);
   if (!token) return null;
   const payload = token.split(".")[1];
-  // console.log(JSON.parse(atob(payload)));
   return JSON.parse(atob(payload));
 };

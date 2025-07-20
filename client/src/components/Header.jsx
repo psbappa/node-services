@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -7,16 +7,16 @@ import { getUser, logout } from "../auth"; // <-- import auth helpers
 
 const Header = () => {
   const user = getUser();
-  console.log(user);
+  // console.log(user);
   const location = useLocation();
   const navigate = useNavigate();
 
   const isLanding = location.pathname === "/";
 
   const handleLogout = () => {
-      logout();
-      navigate("/");
-    };
+    logout();
+    navigate("/");
+  };
 
   return (
     <>
@@ -79,6 +79,8 @@ const Header = () => {
               </>
             )}  */}
 
+            
+
             <span>Welcome :</span>
             <Link to="/junky-bunky">Contacts</Link>
             <Link to="/redux">Redux</Link>
@@ -86,6 +88,7 @@ const Header = () => {
             <Link to="/eCommerce">Ecommerce</Link>
             {user ? (
               <>
+                <Link to="/admin-dashboard">Admin Dashboard</Link>
                 <button onClick={handleLogout} className="text-red-500 underline">
                     Logout
                 </button>
